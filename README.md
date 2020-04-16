@@ -1,2 +1,2 @@
-# covid-tracker
-Created with CodeSandbox
+# covid19_tracker
+Created with Codesandbox
