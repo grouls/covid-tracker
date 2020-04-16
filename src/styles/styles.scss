@@ -3,10 +3,13 @@
 }
 
 body {
-  background-color: rgb(247, 241, 241)
+  background-color: rgb(247, 241, 241);
+  color: rgb(44, 43, 43);
 }
+
 h1{
   text-align: center;
+  text-transform: capitalize;
 }
 
 h2, .title {
