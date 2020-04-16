@@ -1,5 +1,6 @@
 import React from "react";
 import CountUp from "react-countup";
+import { roundUp, createData } from "../utils";
 import {
   Table,
   TableBody,
@@ -9,12 +10,6 @@ import {
   TableRow,
   Paper
 } from "@material-ui/core";
-
-const roundUp = (a, b) => Math.round(((a * 100) / b) * 100) / 100;
-
-const createData = (title, total, percent = "") => {
-  return { title, total, percent };
-};
 
 const Chart = ({ data: { confirmed, recovered, deaths }, country = "" }) => {
   if (!confirmed) {

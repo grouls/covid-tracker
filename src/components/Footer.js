@@ -1,14 +1,14 @@
 import React from "react";
+import { formatDate } from "../utils";
 
 const Footer = ({ lastUpdate }) => {
-  let date = new Date(lastUpdate);
   return (
     <div className="footer">
       <p>
         Data sources from{" "}
         <a href="https://github.com/mathdroid/covid19">mathdriod</a>
       </p>
-      <p>{`Last Updated: ${date}`}</p>
+      <p>{`Last Updated: ${formatDate(lastUpdate)}`}</p>
     </div>
   );
 };
