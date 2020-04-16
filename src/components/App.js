@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <h2>total cases</h2>
+        <Chart data={totalData} country={country} />
         <DropdownList
           filter
           name="countryDropdown"
@@ -46,7 +46,6 @@ class App extends Component {
           className="country-dropdown"
           label="test"
         />
-        <Chart data={totalData} country={country} />
         <Footer lastUpdate={totalData.lastUpdate} />
       </div>
     );
