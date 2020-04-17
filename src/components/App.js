@@ -5,6 +5,7 @@ import Graph from "./Graph";
 import Header from "./Header";
 import { fetchTotalData, fetchCountries } from "../api";
 import { DropdownList } from "react-widgets";
+import Loader from "react-loader-spinner";
 import "../styles/styles.scss";
 import "react-widgets/dist/css/react-widgets.css";
 
@@ -34,20 +35,28 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <DropdownList
-          filter
-          name="countryDropdown"
-          data={countries}
-          value={this.state.country}
-          onChange={this.onChange}
-          selectIcon={false}
-          searchIcon={false}
-          placeholder="Select a country"
-          className="country-dropdown"
-          label="test"
-        />
-        <Chart data={totalData} country={country} />
-        <Graph data={totalData} country={country} />
+        {totalData ? (
+          <div className="loader">
+            <Loader type="ThreeDots" color="grey" height={80} width={80} />
+          </div>
+        ) : (
+          <>
+            <DropdownList
+              filter
+              name="countryDropdown"
+              data={countries}
+              value={this.state.country}
+              onChange={this.onChange}
+              selectIcon={false}
+              searchIcon={false}
+              placeholder="Select a country"
+              className="country-dropdown"
+              label="test"
+            />
+            <Chart data={totalData} country={country} />
+            <Graph data={totalData} country={country} />
+          </>
+        )}
         <Footer lastUpdate={totalData.lastUpdate} />
       </div>
     );
