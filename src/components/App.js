@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        {totalData ? (
+        {!totalData ? (
           <div className="loader">...loading</div>
         ) : (
           <>
