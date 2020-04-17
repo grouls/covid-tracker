@@ -5,7 +5,6 @@ import Graph from "./Graph";
 import Header from "./Header";
 import { fetchTotalData, fetchCountries } from "../api";
 import { DropdownList } from "react-widgets";
-import Loader from "react-loader-spinner";
 import "../styles/styles.scss";
 import "react-widgets/dist/css/react-widgets.css";
 

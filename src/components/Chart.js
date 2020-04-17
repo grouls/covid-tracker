@@ -1,7 +1,6 @@
 import React from "react";
 import CountUp from "react-countup";
 import { roundUp, createData } from "../utils";
-import Loader from "react-loader-spinner";
 import {
   Table,
   TableBody,
@@ -14,7 +13,7 @@ import {
 
 const Chart = ({ data: { confirmed, recovered, deaths }, country = "" }) => {
   if (!confirmed) {
-    return <Loader type="ThreeDots" color="grey" height={80} width={80} />;
+    return null;
   }
   const recoveredPercent = roundUp(recovered.value, confirmed.value);
   const deathPercent = roundUp(deaths.value, confirmed.value);
