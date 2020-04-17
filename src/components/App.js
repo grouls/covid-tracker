@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Footer from "./Footer";
 import Chart from "./Chart";
+import Graph from "./Graph";
 import Header from "./Header";
 import { fetchTotalData, fetchCountries } from "../api";
 import { DropdownList } from "react-widgets";
@@ -33,7 +34,6 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <Chart data={totalData} country={country} />
         <DropdownList
           filter
           name="countryDropdown"
@@ -46,6 +46,8 @@ class App extends Component {
           className="country-dropdown"
           label="test"
         />
+        <Graph data={totalData} country={country} />
+        <Chart data={totalData} country={country} />
         <Footer lastUpdate={totalData.lastUpdate} />
       </div>
     );

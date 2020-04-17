@@ -32,9 +32,9 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country = "" }) => {
               {country ? country : "worldwide"}
             </TableCell>
             <TableCell align="right">Total</TableCell>
-            <TableCell align="right" title="Percentage of Confirmed">
+            <TableCell align="right" title="Estimated Percentage of Confirmed">
               Percent&nbsp;(%)
-            </TableCell>{" "}
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
