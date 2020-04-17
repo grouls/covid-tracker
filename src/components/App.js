@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Chart from "./Chart";
 import Graph from "./Graph";
 import Header from "./Header";
+import Loader from "./Loader";
 import { fetchTotalData, fetchCountries } from "../api";
 import { DropdownList } from "react-widgets";
 import "../styles/styles.scss";
@@ -35,7 +36,7 @@ class App extends Component {
       <div className="app">
         <Header />
         {!totalData ? (
-          <div className="loader">...loading</div>
+          <Loader />
         ) : (
           <>
             <DropdownList

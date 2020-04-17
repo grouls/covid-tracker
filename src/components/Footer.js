@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "./Loader";
 import { formatDate } from "../utils";
 
 const Footer = ({ lastUpdate }) => {
@@ -8,7 +9,11 @@ const Footer = ({ lastUpdate }) => {
         Data sources from{" "}
         <a href="https://github.com/mathdroid/covid19">mathdriod</a>
       </p>
-      <p>{`Last Updated: ${formatDate(lastUpdate)}`}</p>
+      {!lastUpdate ? (
+        <Loader />
+      ) : (
+        <p>{`Last Updated: ${formatDate(lastUpdate)}`}</p>
+      )}
     </div>
   );
 };
