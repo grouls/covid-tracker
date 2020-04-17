@@ -36,9 +36,7 @@ class App extends Component {
       <div className="app">
         <Header />
         {totalData ? (
-          <div className="loader">
-            <Loader type="ThreeDots" color="grey" height={80} width={80} />
-          </div>
+          <div className="loader">...loading</div>
         ) : (
           <>
             <DropdownList
