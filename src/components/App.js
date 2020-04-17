@@ -46,8 +46,8 @@ class App extends Component {
           className="country-dropdown"
           label="test"
         />
-        <Graph data={totalData} country={country} />
         <Chart data={totalData} country={country} />
+        <Graph data={totalData} country={country} />
         <Footer lastUpdate={totalData.lastUpdate} />
       </div>
     );

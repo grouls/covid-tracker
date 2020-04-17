@@ -2,7 +2,7 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 
 const Graph = ({ data: { confirmed, recovered, deaths }, country = "" }) => {
-  return confirmed ? (
+  const pieChart = confirmed ? (
     <div className="graph">
       <Pie
         data={{
@@ -16,11 +16,20 @@ const Graph = ({ data: { confirmed, recovered, deaths }, country = "" }) => {
               ],
               data: [confirmed.value, recovered.value, deaths.value]
             }
-          ]
+          ],
+          display: true,
+          position: "bottom",
+          fullWidth: true
         }}
       />
     </div>
   ) : null;
+
+  return (
+    <div className="col-xs-12">
+      <div className="col-xs-6">{pieChart}</div>
+    </div>
+  );
 };
 
 export default Graph;
